@@ -14,44 +14,47 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 
 ## Ready-Made STAR Examples
 
-<!-- These are populated by /setup from your actual experience. Below are templates showing the format. -->
+### 1. GPUCloud: Distributed Compute Isolation & Security (Systems & Infrastructure)
+**S:** In developing GPUCloud (a distributed platform allowing GPU owners to rent idle compute), I had to solve how untrusted host machines can run tenant containers safely without risking persistent host access, cross-session data leakage, or VRAM contention.
+**T:** Architect and implement a robust sandbox provisioning, execution, and reclamation pipeline communicating securely between the Next.js control plane and Express-based host agents.
+**A:** Enforced container isolation using Dockerode with tmpfs-backed ephemeral volumes capped at 1-2GB per session and GPU hardware device locking with atomic rollback on provisioning failure. Secured host-client communications with action-scoped JWTs enforcing strict 60-second expiries and unique nonce (`jti`), exposed host containers dynamically through Cloudflare Tunnels without opening host ports, and engineered a background reaper cron with two-way reconciliation to reclaim orphaned containers even after network partitions.
+**R:** Achieved 100% ephemeral isolation with zero cross-tenant data residue, zero VRAM contention, and fully automated container lifecycle management.
+**Use for:** "Tell me about a complex project you built end-to-end", "How do you handle security and system isolation?", "Describe a time you solved an infrastructure or networking problem."
 
-### 1. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT - what was happening, what was the problem]
-**T:** [YOUR RESPONSIBILITY - what you specifically needed to do]
-**A:** [WHAT YOU DID - specific actions, tools, methods]
-**R:** [OUTCOME - measurable results, adoption, impact]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### 2. GPUCloud: Zero-Collision Concurrency & Idempotent Payments (Database & Backend Architecture)
+**S:** Under concurrent job demand, multiple users requesting compute could trigger race conditions, causing duplicate assignments or mismatched billing during flaky network webhook delivery.
+**T:** Implement a zero-collision job dispatch mechanism and a reliable, idempotent payment reconciliation workflow.
+**A:** Modeled relational schemas in PostgreSQL (Neon) via Drizzle ORM and designed job dispatch using atomic `FOR UPDATE SKIP LOCKED` transaction queueing. For payment integration with Razorpay, implemented HMAC-SHA256 signature verification, idempotent conditional database updates, and an in-memory token-bucket rate limiter (20 requests/min per IP) to prevent replay attempts and mitigate DDoS risks.
+**R:** Maintained a 0% job collision rate under simulated concurrent load tests and guaranteed consistent, duplicate-free financial and compute reconciliation.
+**Use for:** "How do you handle race conditions and concurrency in databases?", "Describe how you integrate and secure third-party financial or external APIs."
 
-### 2. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### 3. MindsViewMsg: Multi-Tier LRU Rate Limiting (Performance & Abuse Prevention)
+**S:** For MindsViewMsg, an anonymous messaging application, open submission endpoints were susceptible to automated spam, credential brute-forcing, and excessive database load on MongoDB.
+**T:** Protect critical application endpoints from abusive traffic without compromising request latency or introducing expensive external infrastructure dependencies.
+**A:** Architected and deployed an in-memory LRU-cache-based rate limiting layer with 5 tailored endpoint tiers (e.g., 5 messages/min on public submission, 5 verification attempts per 10 min, 3 OTP resends per 15 min). Backed all API routes with strict Zod schema validation and NextAuth.js bcrypt credential hashing.
+**R:** Throttled malicious automated submissions, reduced redundant database queries by over 60% on hot routes, and kept endpoint validation overhead under 1ms.
+**Use for:** "Tell me about an optimization you designed and measured", "How do you prevent abuse and secure public APIs?"
 
-### 3. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
-
-<!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
+### 4. INSPIRE: Production Full-Stack Platform in a Lean Team (Full-Stack Engineering & Team Delivery)
+**S:** As Tech Coordinator for INSPIRE (IIIT Bhopal's leading technical club), we needed to deliver a reliable web platform capable of handling thousands of student registrations, interactive events, and timed quizzes under strict release deadlines.
+**T:** Work as part of a 2-person core engineering team to build, secure, and deploy the official platform from scratch.
+**A:** Built the platform using Next.js 16 and React 19, implementing dynamic metadata and SSR for high search visibility. Designed automated quiz workflows with server-side time-bound evaluation and strict validation. Integrated Firebase Authentication with role-based access control (RBAC), Firestore, and Cloudinary for media asset management.
+**R:** Successfully launched the live platform (`inspire-bhopal.vercel.app`), orchestrating campus-wide technical events and automated quizzes seamlessly with zero downtime.
+**Use for:** "Tell me about a time you collaborated closely in a team to ship software", "Describe your experience with modern frontend/full-stack frameworks and event workflows."
 
 ## Common Tough Questions
 
-### "Why did you leave [previous company]?"
-> [PREPARE YOUR ANSWER - be honest, forward-looking, no negativity about former employer]
+### "Why are you looking for an internship or contract role?"
+> As a Computer Science student at IIIT Bhopal (graduating August 2028), I have built production-grade distributed architectures and full-stack systems like GPUCloud. I am looking for a high-ownership engineering internship (Summer 2027 or 6-month) or part-time contract role where I can contribute directly to modern codebases, solve real scaling challenges, and learn from experienced engineering teams.
 
 ### "You don't have [specific skill/experience]."
-> [PREPARE YOUR ANSWER - acknowledge the gap, bridge to adjacent experience, show willingness to learn]
+> While my hands-on expertise centers on modern TypeScript, Next.js, Node.js, PostgreSQL, and Docker containerization, my strong foundational computer science grounding (9.42 CGPA at IIIT Bhopal) and track record of independently building complex architectures prove that I quickly master new languages, tools, and systems. I can dive in and become productive on your stack within days.
 
 ### "Where do you see yourself in 5 years?"
-> [PREPARE YOUR ANSWER - show ambition aligned with the role's growth path]
+> I see myself as a Senior Software Engineer with deep expertise in distributed systems, cloud infrastructure, and modern product engineering—taking technical ownership of mission-critical systems and helping guide architectural decisions.
 
 ### "What's your biggest weakness?"
-> [PREPARE YOUR ANSWER - genuine weakness with concrete mitigation strategy]
+> Because I am passionate about clean architecture and optimization, I sometimes risk spending too much time perfecting internal abstractions early on. I actively counteract this by practicing strict iterative development: prioritizing working end-to-end prototypes, getting real user or team feedback, and only optimizing paths that demonstrably warrant it.
 
 ### "Why this company specifically?"
 > Customize per company. Must reference: specific projects, company values, market position, or team structure. Never give a generic answer.
@@ -60,8 +63,8 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 
 ### About the Role
 - "What does a typical week look like in this role?"
-- "What would success look like in the first 6 months?"
-- "What's the biggest challenge the team is facing right now?"
+- "What would success look like in the first 3 to 6 months?"
+- "What's the biggest technical challenge the team is facing right now?"
 
 ### About the Team
 - "How big is the team, and how do you divide work?"

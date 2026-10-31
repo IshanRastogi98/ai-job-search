@@ -44,7 +44,9 @@ Read the posting's language requirements as stated for **the role itself** — n
 
 Judge the level comparison the same way you judge everything else in this framework: read both sides as written and reason about it, don't force either into a rigid scale — CEFR letters, LinkedIn-style buckets ("professional working proficiency"), and plain-English words ("conversational," "fluent," "native") all appear in the wild and don't map onto each other precisely. When genuinely unsure whether a stated bar exceeds the candidate's level, prefer FLAG over a silent PASS — the human is meant to be the tiebreaker, not the gate.
 
-**Worked example:** a candidate whose Languages table lists Spanish (Native) and English (B1/B2). A posting requiring "fluent Russian" → **FAIL**, Russian isn't declared at all. A posting requiring "fluent English" → **FLAG**, English is declared but "fluent" plausibly exceeds B1/B2 — score and draft the application, but tell the candidate this posting's bar may be a stretch and let them decide. A posting requiring "conversational English" or unspecified English → **PASS**, B1/B2 clears a "conversational" bar cleanly.
+**Candidate declared languages:**
+- English: Professional working proficiency / Fluent
+- Hindi: Native
 
 ## Scoring Dimensions
 
@@ -60,9 +62,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** Next.js 16 (App Router), React 19, TypeScript, JavaScript (ES6+), Node.js, Express.js, PostgreSQL (Neon), Drizzle ORM, Docker, Cloudflare Tunnels, REST APIs, Zod, Tailwind CSS, shadcn/ui, Radix UI.
+**Moderate match areas:** Python, MongoDB, Mongoose, Firebase, Firestore, Firebase Admin SDK, Supabase, WebSockets, Redux Toolkit, Framer Motion, Google AI SDK.
+**Weak match areas:** Legacy PHP, jQuery, Enterprise Java Spring / .NET monoliths, legacy C++ desktop GUI, Assembly, non-coding/management-only requirements.
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for? Match on the function and nature of the work performed, not the literal job title - a "Data Consultant" and a "Data Scientist" role can be functionally identical.
@@ -74,9 +76,9 @@ Does work history align with what they're looking for? Match on the function and
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Modern full-stack web engineering, React/Next.js frontend development, Express/Node.js API architecture, secure authentication & rate limiting, containerized sandboxes (Docker).
+**Moderate:** Relational database transaction queueing (`FOR UPDATE SKIP LOCKED`), webhook integration (Razorpay HMAC), state management & server-side rendering (SSR).
+**Entry-level:** Multi-tier distributed production clusters at large enterprise scale, legacy enterprise migration.
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -88,13 +90,14 @@ Does the role and company culture match the behavioral profile?
 | 40-59 | Some friction areas |
 | 0-39 | Significant culture mismatch |
 
-**Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
+**Red flags to research:** Pure legacy codebase maintenance (outdated PHP/jQuery), non-technical management with lack of engineering vision, unpaid internships, high bureaucracy blocking modern engineering workflows.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
-- Within commute range: PASS
-- Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
-- Frequent international travel: FLAG (discuss with user)
+- Remote (India or International): PASS
+- On-site or Hybrid in major Indian tech hubs (Bengaluru, Hyderabad, Pune, Gurugram/Noida): PASS
+- Bhopal (local): PASS
+- Other on-site locations without remote option: FAIL (requires discussion with user)
+- Unpaid roles / internships: FAIL (deal-breaker)
 
 ### 5. Career Alignment & Motivation (0-100)
 Does this role advance career goals and contain tasks that energize?
@@ -107,19 +110,19 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Secure Summer 2027 internships, 6-month internships, or flexible remote part-time/contract SWE roles.
+- Work within high-ownership engineering cultures building modern web applications, developer tooling, or cloud infrastructure.
+- Build deep mastery in scalable distributed backend services and high-performance frontend interfaces.
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
-- Non-task factors: leadership style, department culture, company values, degree of autonomy
+- Tasks that energize: Architecting clean full-stack systems, building secure APIs and rate limiters, working with modern stacks (React 19, Next.js 16, TypeScript, Drizzle/Postgres), optimizing database performance, solving non-trivial isolation/concurrency challenges.
+- Tasks that drain: Maintaining abandoned legacy codebases (PHP 5/jQuery), non-coding documentation/management tasks, repetitive manual processes, unpaid work.
+- Non-task factors: Modern engineering culture, proactive code reviews, engineering autonomy, clear product vision.
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: Current student at IIIT Bhopal (graduating August 2028); open to standard market rates for SWE internships; prioritizing engineering excellence and modern stack over base compensation.
+- **Flexibility**: Active academic curriculum; requires clear internship dates (Summer 2027, 6-month formal internship term, or flexible part-time remote contract).
+- **Professional development**: Prioritizes roles that offer mentorship from experienced engineers and exposure to production-grade architecture.
 
 ### 6. Salary Benchmark (Optional)
 
@@ -128,7 +131,7 @@ If the salary lookup tool is configured (`salary_data.json` exists), look up the
 > **Windows:** run these tools as `python`, not `python3`. A python.org install ships no `python3`, so that name reaches the Microsoft Store alias, which either exits 49 with no output (#669) or starts a separate Store Python without the packages `pip` installed (such as pypdf). `.claude/settings.json` allows both spellings.
 
 ```
-python3 salary_lookup.py "<Company Name>" --json
+python salary_lookup.py "<Company Name>" --json
 ```
 
 If a city is known from the posting, add `--city "<City>"` to narrow results.
@@ -176,7 +179,7 @@ Present the evaluation as:
 
 ### Company Research Checklist
 - [ ] Checked company website (mission, values, recent news)
-- [ ] Checked review sites (Glassdoor, Jobindex, etc.)
+- [ ] Checked review sites (Glassdoor, Jobindex, AmbitionBox, etc.)
 - [ ] Checked LinkedIn for team size, recent hires, connections
 - [ ] Checked media for restructuring, growth, or workplace issues
 - [ ] Identified network contacts who may know the team/manager

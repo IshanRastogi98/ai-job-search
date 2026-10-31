@@ -20,13 +20,30 @@ cd cover_letters && xelatex -interaction=nonstopmode cover_<company>_<role>.tex
 
 Expected output: `Output written on cover_<company>_<role>.pdf (1 page, ...)`. Any page count other than 1 is a failure that must be fixed before presenting to the user.
 
+## Permanent Non-Negotiable Cover Letter Guardrails
+
+### 1. Truthfulness & Zero Fabrication (Global Rule)
+- **Source of Truth:** Every claim, metric, and project reference must come strictly from `01-candidate-profile.md`. Never invent metrics or unverified assertions.
+- **Role & Scope Fidelity:** Maintain exact project names and scopes. Accurately describe collaborative team projects (e.g. 2-person core engineering team at INSPIRE).
+- **Fresher / Student Transparency:** Clearly state undergraduate status (B.Tech CSE student at IIIT Bhopal, Class of 2028), targeting student-eligible, internship, or part-time roles, along with exact availability windows.
+
+### 2. Format & Prose Standards
+- **Format:** Strictly **1 page**, written in **3–4 short, natural prose paragraphs**.
+- **NEVER use bullet points in a cover letter.** Bullet lists belong on the CV; the cover letter is a cohesive narrative.
+- **Tone & Content:** Eliminate generic filler ("strong enthusiasm", "passionate about", "gold standard", "esteemed team"). Reference 1–2 specific projects in narrative form (told differently from the CV bullets), connect them to the company's specific product or engineering mission, and plainly state availability and student timeline.
+
+### 3. Layout, LaTeX & Typography
+- **Strict 1-Page Limit:** The cover letter must fit completely on 1 single page including salutation and signature block.
+- **Visual Consistency:** Clean font, 10–11pt text, single-line contact header (`Lucknow, Uttar Pradesh, India` with working clickable links for GitHub and LinkedIn).
+- **AI Tooling Attribution:** Explicitly reference **Claude Code** by name when citing AI-assisted development tools.
+
 ## Compile-and-Inspect Loop (MANDATORY)
 
 After writing the cover letter and before presenting to the user, always compile and visually inspect the PDF. Iterate until the layout is clean:
 
 1. Run `xelatex -interaction=nonstopmode cover_<company>_<role>.tex`
 2. Confirm page count is exactly 1 and compile succeeded
-3. Read the PDF via the Read tool and visually check: signature fits at the bottom, no text cut off, bullet font matches body
+3. Read the PDF via the Read tool and visually check: signature fits at the bottom, no text cut off, 3-4 natural prose paragraphs with zero bullet points
 
 ### Known template pitfall: itemize inside `\lettercontent{}`
 
@@ -76,7 +93,7 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     TITLE NAME
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\namesection{}{\Huge{[YOUR_NAME]}}{  \href{mailto:[YOUR_EMAIL]}{[YOUR_EMAIL]} | [YOUR_PHONE] |  \urlstyle{same}\href{[YOUR_LINKEDIN_URL]}{LinkedIn}
+\namesection{}{\Huge{Ishan Rastogi}}{  \href{mailto:ishanrastogi987654321@gmail.com}{ishanrastogi987654321@gmail.com} | +91-9451116684 |  \urlstyle{same}\href{https://linkedin.com/in/ishan-rastogi-303550225}{LinkedIn}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -108,7 +125,7 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 % doubled break triggers "! LaTeX Error: There's no line here to end."
 \closing{Kind regards,}
 
-\signature{[YOUR_NAME]}
+\signature{Ishan Rastogi}
 \end{flushright}
 \end{document}
 ```
