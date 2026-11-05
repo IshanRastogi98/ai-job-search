@@ -34,7 +34,7 @@ Expected output: `Output written on cover_<company>_<role>.pdf (1 page, ...)`. A
 
 ### 3. Layout, LaTeX & Typography
 - **Strict 1-Page Limit:** The cover letter must fit completely on 1 single page including salutation and signature block.
-- **Visual Consistency:** Clean font, 10–11pt text, single-line contact header (`Lucknow, Uttar Pradesh, India` with working clickable links for GitHub and LinkedIn).
+- **Visual Consistency:** Clean font, 10–11pt text, single-line contact header (`Bhopal, Madhya Pradesh, India` with working clickable links for GitHub and LinkedIn).
 - **AI Tooling Attribution:** Explicitly reference **Claude Code** by name when citing AI-assisted development tools.
 
 ## Compile-and-Inspect Loop (MANDATORY)

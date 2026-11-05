@@ -42,7 +42,7 @@ This repo is a job application workspace for Ishan Rastogi. All agent frameworks
 
 - **Strict 1-Page Limit (Fresher/Intern Standard):** Every compiled CV and every Cover Letter MUST fit strictly on **1 single page** (A4 size). Automatically adjust spacing or trim secondary bullets if a CV ever spills onto page 2.
 - **LaTeX Hygiene:** Never wrap numbers, fractions, or units (like `9.42/10` or `5 req/min`) in LaTeX math mode (`$...$`) or tildes (`~`). Render single-year projects as `2025` (never `2025-2025`). Use clean ASCII hyphens for date ranges.
-- **Visual Consistency:** Single clean font, 10–10.5pt body text, plain standard bullets (no emojis or decorative icons), left-aligned text, single-line contact header (`Lucknow, Uttar Pradesh, India` with working clickable links for GitHub, LinkedIn, and live demos), and ensure headings never sit orphaned at the bottom of a page.
+- **Visual Consistency:** Single clean font, 10–10.5pt body text, plain standard bullets (no emojis or decorative icons), left-aligned text, single-line contact header (`Bhopal, Madhya Pradesh, India` with working clickable links for GitHub, LinkedIn, and live demos), and ensure headings never sit orphaned at the bottom of a page.
 - **AI Tooling Attribution:** When mentioning agentic coding or AI tooling in CVs or cover letters, explicitly reference **Claude Code** by name.
 
 ### 6. Dynamic Project Ranking & Proportional Depth
@@ -69,7 +69,7 @@ This repo is a job application workspace for Ishan Rastogi. All agent frameworks
 ### 8. Header Layout & Spacing Guardrails (Zero Collision Rule)
 - **No Negative Vertical Spacing:** Never use negative `\vspace` between the contact header and the first body paragraph/summary. Always close the centered header block properly with `\par\vspace{6pt}` (or an explicit blank line + `\vspace{4pt}`) before starting the summary text so the contact line and summary never overlap or collide.
 - **Single-Line Plain Contact Bar:** Put location and all contact links on one clean, centered line separated by vertical pipes (`|`), with NO icons/emojis (`\faMobile`, `\faEnvelope`, etc.):
-  `Lucknow, Uttar Pradesh, India | +91-9451116684 | ishanrastogi987654321@gmail.com | LinkedIn | GitHub`
+  `Bhopal, Madhya Pradesh, India | +91-9451116684 | ishanrastogi987654321@gmail.com | LinkedIn | GitHub`
 - **Subtle Link Styling:** Configure `\hypersetup{colorlinks=true, urlcolor=black}` (or a dark slate/navy matching the heading accent) instead of bright default blue (`urlcolor=blue`), keeping the links clickable without visual clutter.
 
 ---
@@ -79,7 +79,7 @@ This repo is a job application workspace for Ishan Rastogi. All agent frameworks
 ### Identity & Contact
 
 - **Name:** Ishan Rastogi
-- **Location:** Lucknow, Uttar Pradesh, India
+- **Location:** Bhopal, Madhya Pradesh, India
 - **Phone:** +91-9451116684
 - **Email:** ishanrastogi987654321@gmail.com
 - **LinkedIn:** https://linkedin.com/in/ishan-rastogi-303550225
@@ -126,7 +126,7 @@ After creating or updating any CV or cover letter, compile and verify **all** of
 - [ ] Every claim, metric, and skill is grounded in `01-candidate-profile.md` (no fabricated ranks, no unmeasured percentages).
 - [ ] Student stage is transparent (Undergraduate at IIIT Bhopal, Class of 2028).
 - [ ] No buzzwords added ("open-source" only with repo link, no unwarranted "CI/CD" or "TDD").
-- [ ] Single-line contact header uses `Lucknow, Uttar Pradesh, India` with working links.
+- [ ] Single-line contact header uses `Bhopal, Madhya Pradesh, India` with working links.
 - [ ] Single-year projects formatted as `2025` (not `2025-2025`).
 - [ ] Date fields use single ASCII hyphens.
 - [ ] Numbers, CGPA, and units are not in LaTeX math mode (write `9.42/10`, not `$9.42/10$`).

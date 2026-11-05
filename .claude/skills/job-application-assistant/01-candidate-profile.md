@@ -30,13 +30,13 @@ framework_version: 1.2.0
 ### 5. Layout, LaTeX & Formatting Guardrails
 - **Strict 1-Page Limit (Fresher/Intern Standard):** Every compiled CV and every Cover Letter MUST fit strictly on 1 single page (A4 size). Automatically adjust spacing or trim secondary bullets if a CV ever spills onto page 2.
 - **LaTeX Hygiene:** Never wrap numbers, fractions, or units (like `9.42/10` or `5 req/min`) in LaTeX math mode (`$...$`) or tildes (`~`). Render single-year projects as `2025` (never `2025-2025`). Use clean ASCII hyphens for date ranges.
-- **Visual Consistency:** Single clean font, 10–10.5pt body text, plain standard bullets (no emojis or decorative icons), left-aligned text, single-line contact header (`Lucknow, Uttar Pradesh, India` with working clickable links for GitHub, LinkedIn, and live demos), and ensure headings never sit orphaned at the bottom of a page.
+- **Visual Consistency:** Single clean font, 10–10.5pt body text, plain standard bullets (no emojis or decorative icons), left-aligned text, single-line contact header (`Bhopal, Madhya Pradesh, India` with working clickable links for GitHub, LinkedIn, and live demos), and ensure headings never sit orphaned at the bottom of a page.
 
 ---
 
 ## Identity
 - **Name:** Ishan Rastogi
-- **Location:** Lucknow, Uttar Pradesh, India
+- **Location:** Bhopal, Madhya Pradesh, India
 - **Phone:** +91-9451116684
 - **Email:** ishanrastogi987654321@gmail.com
 - **LinkedIn:** https://linkedin.com/in/ishan-rastogi-303550225

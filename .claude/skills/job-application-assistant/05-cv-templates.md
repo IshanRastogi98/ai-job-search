@@ -46,7 +46,7 @@ Expected output: `Output written on main_<company>_<role>.pdf (1 page, ...)`. An
 
 - **Strict 1-Page Limit (Fresher/Intern Standard):** Every compiled CV MUST fit strictly on **1 single page** (A4 size). Automatically adjust spacing or trim secondary bullets if a CV ever spills onto page 2.
 - **LaTeX Hygiene:** Never wrap numbers, fractions, or units (like `9.42/10` or `5 req/min`) in LaTeX math mode (`$...$`) or tildes (`~`). Render single-year projects as `2025` (never `2025-2025`). Use clean ASCII hyphens for date ranges.
-- **Visual Consistency:** Single clean font, 10–10.5pt body text, plain standard bullets (no emojis or decorative icons), left-aligned text, single-line contact header (`Lucknow, Uttar Pradesh, India` with working clickable links for GitHub, LinkedIn, and live demos), and ensure headings never sit orphaned at the bottom of a page.
+- **Visual Consistency:** Single clean font, 10–10.5pt body text, plain standard bullets (no emojis or decorative icons), left-aligned text, single-line contact header (`Bhopal, Madhya Pradesh, India` with working clickable links for GitHub, LinkedIn, and live demos), and ensure headings never sit orphaned at the bottom of a page.
 - **AI Tooling Attribution:** When mentioning agentic coding or AI tooling in CVs, explicitly reference **Claude Code** by name.
 
 ### 5. Dynamic Project Ranking & Proportional Depth
@@ -70,7 +70,7 @@ Expected output: `Output written on main_<company>_<role>.pdf (1 page, ...)`. An
 ### 7. Header Layout & Spacing Guardrails (Zero Collision Rule)
 - **No Negative Vertical Spacing:** Never use negative `\vspace` between the contact header and the first body paragraph/summary. Always close the centered header block properly with `\par\vspace{6pt}` (or an explicit blank line + `\vspace{4pt}`) before starting the summary text so the contact line and summary never overlap or collide.
 - **Single-Line Plain Contact Bar:** Put location and all contact links on one clean, centered line separated by vertical pipes (`|`), with NO icons/emojis (`\faMobile`, `\faEnvelope`, etc.):
-  `Lucknow, Uttar Pradesh, India | +91-9451116684 | ishanrastogi987654321@gmail.com | LinkedIn | GitHub`
+  `Bhopal, Madhya Pradesh, India | +91-9451116684 | ishanrastogi987654321@gmail.com | LinkedIn | GitHub`
 - **Subtle Link Styling:** Configure `\hypersetup{colorlinks=true, urlcolor=black}` (or a dark slate/navy matching the heading accent) instead of bright default blue (`urlcolor=blue`), keeping the links clickable without visual clutter.
 
 ## Document Structure (Strict 1-Page Standard)
@@ -107,7 +107,7 @@ Expected output: `Output written on main_<company>_<role>.pdf (1 page, ...)`. An
   \begin{center}%
     {\namefont{\color{color1}Ishan Rastogi}}\par\vspace{3pt}%
     {\small%
-      Lucknow, Uttar Pradesh, India%
+      Bhopal, Madhya Pradesh, India%
       \ \textbar\ %
       +91-9451116684%
       \ \textbar\ %
